@@ -40,10 +40,19 @@ window.onload = function() {
 };
 
 //if true, assign letter to correct position on screen
+
+//use indexof to get position of the letter
+if a in word let location = word.indexof ('a')
+//sets location to zero
+
+//use splice to replace dashes with letters
+
+
 //run loop until you cover all the spaces that have that correct letter
 //if false, add letter to already guessed section in no particular order
 //with each letter guessed, decrese the number of guesses by 1
 //if word is correctly guessed, increase win count by 1 and restart process
 //if user runs out of guesses (=0), display you lose
 
+//.join("") turns array into string
 
