@@ -2,7 +2,7 @@
 
 //create array of words to guess
 let words = ["bulls", "hornets", "warriors", "wizards", "suns"];
-let guesses = 10;
+let guessRemain = 10;
 let lettersGuessed = [];
 let guessIndex = -1;
 let numberSpaces = [];
@@ -40,18 +40,11 @@ document.onkeyup = function (event) {
             console.log(userText);
             console.log(lettersGuessed);
             console.log(compArray.includes(userText));
+            //if userText goes into lettersGuessed, guesses remaining - 1
+            guessRemain--;
+            document.getElementById("guess-remain").innerHTML = guessRemain;
             }
         }
 
 
-
-
-//screen displays dash marks that correspond to word length
-
-
-//run loop until you cover all the spaces that have that correct letter
-//if false, add letter to already guessed section in no particular order
-//with each letter guessed, decrese the number of guesses by 1
-//if word is correctly guessed, increase win count by 1 and restart process
-//if user runs out of guesses (=0), display you lose
 
