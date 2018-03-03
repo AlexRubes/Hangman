@@ -1,11 +1,12 @@
 //display when the page loads
 
-//create array of words to guess
+//declare variables and arrays
 let words = ["bulls", "hornets", "warriors", "wizards", "suns"];
 let guessRemain = 10;
 let lettersGuessed = [];
 let guessIndex = -1;
 let numberSpaces = [];
+let wins = 0;
 
 
 //on page load the game chooses a word
@@ -33,7 +34,6 @@ document.onkeyup = function (event) {
             }
         } 
     }
-    
     else { 
             lettersGuessed.push(userText);
             document.getElementById("already-guess").innerHTML = lettersGuessed;
@@ -43,8 +43,18 @@ document.onkeyup = function (event) {
             //if userText goes into lettersGuessed, guesses remaining - 1
             guessRemain--;
             document.getElementById("guess-remain").innerHTML = guessRemain;
-            }
+            }  
+            if (guessRemain === 0) {
+                alert("loser face");
+                
+             } if (compArray.toString() == numberSpaces.toString()){
+                 wins++;
+                 document.getElementById("win-win").innerHTML = wins;
+             }
         }
 
+    
+
+    
 
 
