@@ -1,26 +1,34 @@
 //display when the page loads
 
 //declare variables and arrays
-let words = ["bulls", "hornets", "warriors", "wizards", "suns"];
+let words = ["bulls", "hornets", "warriors", "wizards", "suns", "heat", "lakers"];
 let guessRemain = 10;
 let lettersGuessed = [];
-let guessIndex = -1;
 let numberSpaces = [];
 let wins = 0;
+let losses = 0;
+let randomNumber ;
+let compChoice ;
+let compArray ;  
 
 
-//on page load the game chooses a word
-let randomNumber = Math.floor(Math.random()*5);
-let compChoice = words[randomNumber];
+function init() {
+    numberSpaces = [];
+    lettersGuessed = [];
+    guessRemain = 10;
+    randomNumber = Math.floor((Math.random() * 5));
+    compChoice = words[randomNumber]; 
+    compArray = Array.from(compChoice);
+    console.log(compArray);
+    for (var i=0; i < compArray.length; i++) {
+      numberSpaces.push("_");
+      document.getElementById("blank-blank").innerHTML = numberSpaces.join(" ");
+      document.getElementById("win-win").innerHTML = wins;
+      document.getElementById("loss-loss").innerHTML = losses;
+      document.getElementById("guess-remain").innerHTML = guessRemain;
+    }
 
-//break letters of chosen word into array
-let compArray = Array.from(compChoice);
-console.log(compArray);
-
-for (var i=0; i < compChoice.length; i++) {
-    numberSpaces.push("_");
 }
-
 //game starts on first click
 document.onkeyup = function (event) {
     //take letter pressed as an event aka userText
@@ -45,16 +53,18 @@ document.onkeyup = function (event) {
             document.getElementById("guess-remain").innerHTML = guessRemain;
             }  
             if (guessRemain === 0) {
-                alert("loser face");
+                losses++;
+                document.getElementById("loss-loss").innerHTML = losses;
+                init();
                 
              } if (compArray.toString() == numberSpaces.toString()){
                  wins++;
                  document.getElementById("win-win").innerHTML = wins;
+                 init();    
              }
         }
-
     
-
+    init();
     
 
 

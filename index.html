@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
-    <script src="./game.js"></script>
+    
 </head>
 <body>
     <header class='topheader'>
@@ -15,13 +15,21 @@
         <h1 class='title'>Hangman</h1>
     </header>
     <div class='container'>
-        <h2>Press any key to get started!</h2>
-        <h2>Wins: <span id="win-win"></span></h2>
-        <h2>Guess the word: <span id="blank-blank"></span></h2>
-        <h2>Number of guesses remaining: <span id="guess-remain"></span></h2>
-        <h2>Letters already guessed: <span id="already-guess"></span></h2>
+        <div class="word">
+            <h2>Guess the word: <span id="blank-blank"></span></h2>
+        </div>
+        <div class="stats">
+            <h2>Press any key to get started!</h2>
+            <br>
+            <h2>Letters already guessed: <span id="already-guess"></span></h2>
+            <h2>Number of guesses remaining: <span id="guess-remain"></span></h2>
+            <h2>Wins: <span id="win-win"></span></h2>
+            <h2>Losses: <span id="loss-loss"></span></h2>
+            
+        </div>
     </div>
-
+    
+    <script src="./game.js"></script>
     
 </body>
 </html>
