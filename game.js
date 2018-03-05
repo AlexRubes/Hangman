@@ -32,7 +32,9 @@ function init() {
 //game starts on first click
 document.onkeyup = function (event) {
     //take letter pressed as an event aka userText
-    userText = event.key; 
+    userKey = event.key; 
+    let userText = userKey.toLowerCase();
+    
     
      if (compChoice.includes(userText) === true) {
         for (var i=0; i < compChoice.length; i++) {
