@@ -2,6 +2,8 @@
 
 //declare variables and arrays
 let words = ["bulls", "hornets", "warriors", "wizards", "suns", "heat", "lakers"];
+let alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
+"q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 let guessRemain = 10;
 let lettersGuessed = [];
 let numberSpaces = [];
@@ -32,7 +34,9 @@ function init() {
 //game starts on first click
 document.onkeyup = function (event) {
     //take letter pressed as an event aka userText
+    if (alpha.includes(event.key)) {
     userKey = event.key; 
+
     let userText = userKey.toLowerCase();
     
     
@@ -64,9 +68,11 @@ document.onkeyup = function (event) {
                  document.getElementById("win-win").innerHTML = wins;
                  init();    
              }
-        }
+        } else alert("PICK LETTERS ONLY");
+    }
     
     init();
     
+    //figure out how to exclude non-letters
 
 
