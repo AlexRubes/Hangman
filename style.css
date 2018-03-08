@@ -1,22 +1,28 @@
+body {
+    background: black;
+    background: url(https://wallpaperclicker.com/storage/wallpaper/hd-basketball-court-wallpaper-background-59789740.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    height:100%;
+}
 .topheader {
     align-items: center;
     background: #1779ba;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
 }
 .title {
     color: white;
     font-family: "Flama-Bold",sans-serif;
     font-size: 100px;
 }
-.container {
-
-}
 .word {
-    background: #c8102e;
-    border: 2px solid black;
-    color:white;
+    background: white;
+    color:black;
     font-family: "Flama-Bold",sans-serif;
     font-size: 40px;
     justify-content: center;
@@ -36,4 +42,9 @@
     padding:20px;
     text-align: center;
     width: 768px;
+}
+@media screen and (max-width: 640px) {
+    .container {
+      width: 100%;
+    }
 }
